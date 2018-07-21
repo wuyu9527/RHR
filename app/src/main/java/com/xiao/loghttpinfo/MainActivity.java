@@ -3,6 +3,7 @@ package com.xiao.loghttpinfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.orhanobut.logger.Logger;
 import com.xiao.loghttpinfo.bean.Kuaidi;
 import com.xiao.loghttpinfo.http.RetrofitManager;
 
@@ -31,12 +32,12 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onError(Throwable e) {
-                        LogUtil.e("请求失败", e);
+                        Logger.e("请求失败", e);
                     }
 
                     @Override
                     public void onNext(Kuaidi kuaidi) {
-                        LogUtil.d("请求成功");
+                        Logger.d("请求成功");
                     }
                 });
     }
